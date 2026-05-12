@@ -11,7 +11,7 @@
     <link href="https://framework-gb.cdn.gob.mx/gm/v3/assets/images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-	<main class="page mb-5" style="text-align: left;">
+		<main class="page mb-5" style="text-align: left;">
 		
 		<nav class="navbar navbar-expand-md navbar-dark bg-light sub-navbar fixed-top">
 		  <div class="container">
@@ -40,15 +40,31 @@
 				<li class="nav-item "><a class="nav-link subnav-link" href="https://www.gob.mx/inifap/archivo/documentos">Documentos</a></li>
 				<li class="nav-item "><a class="nav-link subnav-link" href="https://vun.inifap.gob.mx/portalweb/_Transparencia">Transparencia</a></li>
 				<li class="nav-item "><a class="nav-link subnav-link" href="https://www.gob.mx/agricultura/es/#344">Contacto</a></li>
-			  </ul>
+			</ul>
 			</div>
 		  </div>
 		</nav>
-		
+
+@auth
+<div class="container-fluid mt-2 pt-1">
+    <div class="d-flex justify-content-end align-items-center pe-4">
+        <span class="me-3 fw-bold">
+            {{ Auth::user()->name }}
+        </span>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-sm">
+                Cerrar sesión
+            </button>
+        </form>
+    </div>
+</div>
+@endauth
+
         @yield("content") 
     
-			 <script src="https://framework-gb.cdn.gob.mx/gm/v3/assets/js/gobmx.js"></script>
-		        
+			<script src="https://framework-gb.cdn.gob.mx/gm/v3/assets/js/gobmx.js"></script>
+			
     <script>
         $gmx(document).ready(function() {
             
