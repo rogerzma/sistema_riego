@@ -11,7 +11,7 @@
     <link href="https://framework-gb.cdn.gob.mx/gm/v3/assets/images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-	<main class="page" style="text-align: left;">
+		<main class="page mb-5" style="text-align: left;">
 		
 		<nav class="navbar navbar-expand-md navbar-dark bg-light sub-navbar fixed-top">
 		  <div class="container">
